@@ -16,14 +16,14 @@
     self.titleLabel.backgroundColor = self.backgroundColor;
     self.imageView.backgroundColor = self.backgroundColor;
     
-    CGSize titleSize = self.titleLabel.bounds.size;
+    CGSize titleSize = self.titleLabel.intrinsicContentSize;//用这个才能获取titleSize
     CGSize imageSize = self.imageView.bounds.size;
     CGFloat interval = 1.0;
     if (lzType == XSCategoryTypeLeft) {
         [self setImageEdgeInsets:UIEdgeInsetsMake(0,titleSize.width + interval, 0, -(titleSize.width + interval))];
         [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -(imageSize.width + interval), 0, imageSize.width + interval)];
     } else if(lzType == XSCategoryTypeBottom) {
-        [self setImageEdgeInsets:UIEdgeInsetsMake(0,0, titleSize.height + interval, -(titleSize.width-imageSize.width)/2)];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(0,0, titleSize.height + interval, -titleSize.width)];
         [self setTitleEdgeInsets:UIEdgeInsetsMake(imageSize.height + interval, -(imageSize.width), 0, 0)];
     }
 }
