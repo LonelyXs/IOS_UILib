@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"2133";
+    self.title = @"21";
     UIButton *testBtn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     [testBtn setTimeInterval:0.5];
     [testBtn setTitle:@"clickMe" forState:UIControlStateNormal];
